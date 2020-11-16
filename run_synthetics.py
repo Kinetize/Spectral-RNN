@@ -27,7 +27,7 @@ def np_scalar_to_summary(tag: str, scalar: np.array, np_step: np.array,
 
 def run_experiemtns(lpd_lst):
     for exp_no, lpd in enumerate(lpd_lst):
-        time_str = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+        time_str = time.strftime("%Y-%m-%d_%H_%M_%S", time.gmtime())
         lpd['time_str'] = time_str
         pgraph = FFTpredictionGraph(lpd, generator=lpd['generator'])
         param_str = time_str + '_' + lpd['cell_type'] + '_size_' + str(lpd['num_units']) + \

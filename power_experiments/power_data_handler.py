@@ -70,7 +70,7 @@ class PowerDataHandler(object):
                     company_dict[year] = np.array(year_lst)
 
             if company_dict:
-                key = root.split('/')[-2] + '_' + root.split('/')[-1]
+                key = root.split('\\')[-2] + '_' + root.split('\\')[-1]
                 self.files[key] = company_dict
 
         if test_keys is None:

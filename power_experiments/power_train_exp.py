@@ -13,7 +13,7 @@ fifteen_minute_sampling = True
 
 # set up a parameter dictionary.
 pd = {}
-pd['base_dir'] = 'log/cvpr_workshop_power_pred4/'
+pd['base_dir'] = 'log\\cvpr_workshop_power_pred4\\'
 
 pd['prediction_days'] = 60 #,  1
 if pd['prediction_days'] > 1:
@@ -54,7 +54,7 @@ def fix_parameters(pd):
 
     if fifteen_minute_sampling is True:
         pd['samples_per_day'] = 96
-        path = './power_experiments/power_data/15m_by_country_by_company/'
+        path = 'power_data\\15m_by_country_by_company\\'
         power_handler = PowerDataHandler(path,
                                          pd['context_days'])
         pd['power_handler'] = power_handler
@@ -144,7 +144,7 @@ pd_lst.append(fix_parameters(time_pd))
 
 for exp_no, cpd in enumerate(pd_lst):
     print('---------- Experiment', exp_no, 'of', len(pd_lst), '----------')
-    time_str = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+    time_str = time.strftime("%Y-%m-%d_%H_%M_%S", time.gmtime())
     cpd['time_str'] = time_str
     print(cpd)
     pgraph = FFTpredictionGraph(cpd)
